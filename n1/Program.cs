@@ -13,10 +13,19 @@ namespace n1 {
 		static void Main(string[] args) {
 
             Console.WriteLine("Enter a:");
-			int Number = int.Parse(Console.ReadLine());
+			var NumberStr = Console.ReadLine();
 
 			Console.WriteLine("Enter n:");
-			int Exponent = int.Parse(Console.ReadLine());
+			var ExponentStr = Console.ReadLine();
+
+			int Number, Exponent;
+
+			if (!int.TryParse(NumberStr, out Number) || !int.TryParse(ExponentStr, out Exponent)) {
+
+				Console.WriteLine("\n" + "Invalid number");
+
+				return;
+			}
 
 			bool Negative = false;
 
